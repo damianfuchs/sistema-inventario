@@ -28,6 +28,10 @@ header("Pragma: no-cache");
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+
+
 </head>
 
 <body>
@@ -62,7 +66,7 @@ header("Pragma: no-cache");
 
         <ul class="nav nav-pills flex-column sidebar-menu" id="menu">
             <li><a href="#" class="nav-link" id="btn-proveedores"><i class="bi bi-truck me-2"></i> Proveedores</a></li>
-            <li><a href="#" class="nav-link" id="btn-productos2"><i class="bi bi-box-seam me-2"></i> Productos</a></li>
+            <li><a href="#" class="nav-link" id="btn-agregarproductos"><i class="bi bi-box-seam me-2"></i> Agregar Productos</a></li>
             <li><a href="#" class="nav-link" id="btn-usuarios"><i class="bi bi-people me-2"></i> Usuarios</a></li>
             <li><a href="#" class="nav-link" id="btn-configuracion"><i class="bi bi-gear me-2"></i> Configuración</a>
             </li>
@@ -94,15 +98,7 @@ header("Pragma: no-cache");
         </div>
 
         <!-- Gráficos -->
-        <div class="row mt-5 px-3" id="graficos-estadisticas"
-            style="overflow-x: hidden; max-width: 80%; margin: 0 auto;">
-            <div class="col-md-8 mb-4">
-                <canvas id="barLineChart" style="max-width: 100%; height: auto; display: block;"></canvas>
-            </div>
-            <div class="col-md-4 mb-4">
-                <canvas id="pieChart" style="max-width: 100%; height: auto; display: block;"></canvas>
-            </div>
-        </div>
+
 
 
         <!-- Contenido dinámico -->
@@ -123,9 +119,8 @@ header("Pragma: no-cache");
         "btn-recibidos": "modulos/recibidos.php",
         "btn-devoluciones": "modulos/devoluciones.php",
         "btn-proveedores": "modulos/proveedores.php",
-        "btn-productos2": "modulos/productos.php",
         "btn-usuarios": "modulos/usuarios.php",
-        "btn-configuracion": "modulos/configuracion.php"
+        "btn-configuracion": "modulos/configuracion.php",
     };
 
     Object.keys(botones).forEach(id => {
@@ -150,6 +145,9 @@ header("Pragma: no-cache");
         location.href = "index.php";
     });
     </script>
+
+
+
 </body>
 
 </html>

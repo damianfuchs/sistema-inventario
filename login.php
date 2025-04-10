@@ -1,16 +1,17 @@
 <!-- LOGIN de la Pagina -->
 <?php
 session_start();
-include 'db/conexion.php';
+include 'db/conexion.php';  // Incluye la conexión con mysqli
 
 if (isset($_POST['login'])) {
     $usuario = $_POST['usuario'];
     $contrasena = $_POST['contrasena'];
 
-    // Consulta para verificar usuario
-    $consulta = $conexion->prepare("SELECT usuario_id, usuario_nombre, contrasena, usuario_tipo FROM usuarios WHERE usuario_nombre = ? AND contrasena = ?");
-    $consulta->execute([$usuario, $contrasena]);
-    $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+    // Consulta para verificar usuario con mysqli
+    $consulta = $conn->prepare("SELECT usuario_id, usuario_nombre, contrasena, usuario_tipo FROM usuarios WHERE usuario_nombre = ? AND contrasena = ?");
+    $consulta->bind_param("ss", $usuario, $contrasena); // 'ss' indica que ambos parámetros son cadenas
+    $consulta->execute();
+    $resultado = $consulta->get_result()->fetch_assoc();  // Usar get_result() con mysqli
 
     if ($resultado) {
         // Guardar datos en sesión

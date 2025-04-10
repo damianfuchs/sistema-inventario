@@ -1,4 +1,5 @@
 // Gráfico combinado barra + línea
+
 const ctx1 = document.getElementById('barLineChart')?.getContext('2d');
 if (ctx1) {
   new Chart(ctx1, {
@@ -15,8 +16,8 @@ if (ctx1) {
         {
           type: 'line',
           label: 'Dominancia de Mercado',
-          data: [10, 11, 11, 12, 12, 13, 20, 50, 60, 55, 95, 90],
-          borderColor: 'rgba(0,0,0,0.7)',
+          data: [10, 11, 11, 12, 12, 13, 20, 50, 60, 55, 50, 40],
+          borderColor: 'rgba(0,0,0,0.7)', 
           fill: false,
           tension: 0.4,
           yAxisID: 'y1'

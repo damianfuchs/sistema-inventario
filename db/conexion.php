@@ -1,13 +1,15 @@
 <?php
-$host = 'localhost';
-$dbname = 'sistema-inventario';
-$usuario = 'root';
-$contrasena = ''; // O la contraseña que tengas
+// conexion.php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "sistema-inventario"; // Nombre de tu base de datos
 
-try {
-    $conexion = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $usuario, $contrasena);
-    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
+// Crear la conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Comprobar la conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
 }
 ?>
