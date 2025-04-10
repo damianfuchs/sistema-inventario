@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+// Verificar si el usuario está logueado
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
+// Evitar caché
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -74,7 +89,8 @@
     <div class="main p-4" style="background-color: rgb(186 190 193);">
         <div class="encabezado-custom d-flex align-items-center">
             <h2 class="mb-0">Sistema web de inventarios</h2>
-            <a href="#" class="bi bi-box-arrow-right fs-2 ms-auto"></a>
+            <a href="controladores/logout.php" class="bi bi-box-arrow-right fs-2 ms-auto"></a>
+
         </div>
 
         <!-- Gráficos -->
