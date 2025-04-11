@@ -20,9 +20,11 @@ header("Pragma: no-cache");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Inventario</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,44 +39,80 @@ header("Pragma: no-cache");
 <body>
     <!-- Sidebar -->
     <div class="sidebar bg-dark text-white p-3 vh-100">
-        <div class="barra-roja">
-            <div class="nombrelogo">
-                <a href="#">DF INVENTARIO</a>
-            </div>
-        </div>
 
         <div class="text-center mb-3">
-            <img src="img/logo.png" alt="Logo" class="logo-sidebar img-fluid">
+            <img src="img/logo.png" alt="Logo" class="logo-sidebar img-fluid;">
         </div>
 
         <hr class="text-white">
 
         <ul class="nav nav-pills flex-column mb-auto sidebar-menu" id="menu">
-            <li><a href="index.php" class="nav-link active" id="btn-inicio"><i class="bi bi-house me-2"></i> Inicio</a>
+            <li style="padding: 3px;">
+                <a href="index.php" class="nav-link active" id="btn-inicio">
+                    <i class="bi bi-house me-2"></i> INICIO
+                </a>
             </li>
-            <li><a href="#" class="nav-link" id="btn-productos"><i class="bi bi-archive me-2"></i> Productos </a></li>
-            <li><a href="#" class="nav-link" id="btn-categorias"><i class="bi bi-receipt me-2"></i> Categorias</a></li>
-            <li><a href="#" class="nav-link" id="btn-venta"><i class="bi bi-bag me-2"></i> Venta</a></li>
-            <li><a href="#" class="nav-link" id="btn-recibidos"><i class="bi bi-box-arrow-in-down me-2"></i>
-                    Recibidos</a></li>
-            <li><a href="#" class="nav-link" id="btn-devoluciones"><i class="bi bi-arrow-counterclockwise me-2"></i>
-                    Devoluciones</a></li>
+
+            <!-- Productos con submenú -->
+            <li style="padding: 3px;">
+                <a href="#submenu-productos" data-bs-toggle="collapse" class="nav-link">
+                    <i class="bi bi-archive me-2"></i> PRODUCTOS
+                </a>
+                <ul class="collapse ps-2" id="submenu-productos">
+                    <li style="padding: 3px; font-size: 15px;" id="btn-productos"><a href="#" class="nav-link">Ver Productos</a></li>
+                    <li style="padding: 3px; font-size: 15px;"><a href="#" class="nav-link">Agregar Producto</a></li>
+                </ul>
+            </li>
+
+            <!-- Categorías con submenú -->
+            <li style="padding: 3px;">
+                <a href="#submenu-categorias" data-bs-toggle="collapse" class="nav-link">
+                    <i class="bi bi-receipt me-2"></i> CATEGORIAS
+                </a>
+                <ul class="collapse ps-2" id="submenu-categorias">
+                    <li style="padding: 3px; font-size: 15px;"><a href="#" class="nav-link">Ver Categorías</a></li>
+                    <li style="padding: 3px; font-size: 15px;"><a href="#" class="nav-link">Agregar Categoría</a></li>
+                </ul>
+            </li>
+
+            <!-- Ventas con submenú -->
+            <li style="padding: 3px;">
+                <a href="#submenu-ventas" data-bs-toggle="collapse" class="nav-link">
+                    <i class="bi bi-cart me-2"></i></i> VENTAS
+                </a>
+                <ul class="collapse ps-2" id="submenu-ventas">
+                    <li style="padding: 3px; font-size: 15px;"><a href="#" class="nav-link">Ver Ventas</a></li>
+                    <li style="padding: 3px; font-size: 15px;"><a href="#" class="nav-link">Nueva Venta</a></li>
+                </ul>
+            </li>
+
+            <li style="padding: 3px;">
+                <a href="#submenu-proveedores" data-bs-toggle="collapse" class="nav-link">
+                    <i class="bi bi-file-earmark-person"></i> PROVEEDORES
+                </a>
+                <ul class="collapse ps-2" id="submenu-proveedores">
+                    <li style="padding: 3px; font-size: 15px;"><a href="#" class="nav-link">Ver Proveedores</a></li>
+                    <li style="padding: 3px; font-size: 15px;"><a href="#" class="nav-link">Nuevo Proveedor</a></li>
+                </ul>
+            </li>
+
+
         </ul>
+
 
         <hr class="text-white">
         <h6 class="text-uppercase text-white-50 fw-bold small text-center mb-2">Mantenimiento</h6>
 
         <ul class="nav nav-pills flex-column sidebar-menu" id="menu">
-            <li><a href="#" class="nav-link" id="btn-proveedores"><i class="bi bi-truck me-2"></i> Proveedores</a></li>
-            <li><a href="#" class="nav-link" id="btn-agregarproductos"><i class="bi bi-box-seam me-2"></i> Agregar Productos</a></li>
-            <li><a href="#" class="nav-link" id="btn-usuarios"><i class="bi bi-people me-2"></i> Usuarios</a></li>
-            <li><a href="#" class="nav-link" id="btn-configuracion"><i class="bi bi-gear me-2"></i> Configuración</a>
-            </li>
+            <li style="padding: 3px;"><a href="#" class="nav-link" id="btn-configuracion"><i class="bi bi-gear me-2"></i> Configuración</a></li>
+            <li style="padding: 3px;"><a href="#" class="nav-link" id="btn-usuarios"><i class="bi bi-people me-2"></i> Usuarios</a></li>    
         </ul>
+        <hr class="text-white">
 
-        <div class="derechosautor mt-auto text-center">
+        <div class="derechosautor mt-auto text-start ms-4">
+
             <p class="mb-1">© Damian Emmanuel Fuchs</p>
-            <div>
+            <div class="mt-auto ms-4">
                 <a href="https://www.instagram.com/damiifuchs" target="_blank" class="text-white mx-2">
                     <i class="bi bi-instagram"></i>
                 </a>
@@ -91,10 +129,12 @@ header("Pragma: no-cache");
 
     <!-- Main Content -->
     <div class="main p-4" style="background-color: rgb(186 190 193);">
-        <div class="encabezado-custom d-flex align-items-center">
-            <h2 class="mb-0">Sistema web de inventarios</h2>
-            <a href="controladores/logout.php" class="bi bi-box-arrow-right fs-2 ms-auto"></a>
 
+
+        <div class="encabezado-custom position-relative text-center" style=" border-radius: 6px;">
+            <h2 class="mb-0">DF Inventario</h2>
+            <a href="controladores/logout.php"
+                class="bi bi-box-arrow-right fs-2 position-absolute end-0 top-50 translate-middle-y me-3"></a>
         </div>
 
         <!-- Gráficos -->
@@ -120,7 +160,8 @@ header("Pragma: no-cache");
         "btn-devoluciones": "modulos/devoluciones.php",
         "btn-proveedores": "modulos/proveedores.php",
         "btn-usuarios": "modulos/usuarios.php",
-        "btn-configuracion": "modulos/configuracion.php",
+        "btn-agregarproductos": "modulos/agregar_productos.php",
+        "btn-configuracion": "modulos/configuracion.php"
     };
 
     Object.keys(botones).forEach(id => {
