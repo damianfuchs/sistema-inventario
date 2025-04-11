@@ -24,6 +24,7 @@ header("Pragma: no-cache");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo.png">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +47,8 @@ header("Pragma: no-cache");
 
         <hr class="text-white">
 
-        <ul class="nav nav-pills flex-column mb-auto sidebar-menu" id="menu">
+        <ul class="nav nav-pills flex-column mb-auto sidebar-menu" id="menu-principal">
+            <!-- Inicio -->
             <li style="padding: 3px;">
                 <a href="index.php" class="nav-link active" id="btn-inicio">
                     <i class="bi bi-house me-2"></i> INICIO
@@ -58,9 +60,13 @@ header("Pragma: no-cache");
                 <a href="#submenu-productos" data-bs-toggle="collapse" class="nav-link">
                     <i class="bi bi-archive me-2"></i> PRODUCTOS
                 </a>
-                <ul class="collapse ps-2" id="submenu-productos">
-                    <li style="padding: 3px; font-size: 15px;" id="btn-productos"><a href="#" class="nav-link">Ver Productos</a></li>
-                    <li style="padding: 3px; font-size: 15px;"><a href="#" class="nav-link">Agregar Producto</a></li>
+                <ul class="collapse ps-2" id="submenu-productos" data-bs-parent="#menu-principal">
+                    <li style="padding: 3px;" id="btn-productos">
+                        <a href="#" class="nav-link">Ver Productos</a>
+                    </li>
+                    <li style="padding: 3px; font-size: 15px;">
+                        <a href="#" class="nav-link">Agregar Producto</a>
+                    </li>
                 </ul>
             </li>
 
@@ -69,43 +75,57 @@ header("Pragma: no-cache");
                 <a href="#submenu-categorias" data-bs-toggle="collapse" class="nav-link">
                     <i class="bi bi-receipt me-2"></i> CATEGORIAS
                 </a>
-                <ul class="collapse ps-2" id="submenu-categorias">
-                    <li style="padding: 3px; font-size: 15px;"><a href="#" class="nav-link">Ver Categorías</a></li>
-                    <li style="padding: 3px; font-size: 15px;"><a href="#" class="nav-link">Agregar Categoría</a></li>
+                <ul class="collapse ps-2" id="submenu-categorias" data-bs-parent="#menu-principal">
+                    <li style="padding: 3px; font-size: 15px;">
+                        <a href="#" class="nav-link">Ver Categorías</a>
+                    </li>
+                    <li style="padding: 3px; font-size: 15px;">
+                        <a href="#" class="nav-link">Agregar Categoría</a>
+                    </li>
                 </ul>
             </li>
 
             <!-- Ventas con submenú -->
             <li style="padding: 3px;">
                 <a href="#submenu-ventas" data-bs-toggle="collapse" class="nav-link">
-                    <i class="bi bi-cart me-2"></i></i> VENTAS
+                    <i class="bi bi-cart me-2"></i> VENTAS
                 </a>
-                <ul class="collapse ps-2" id="submenu-ventas">
-                    <li style="padding: 3px; font-size: 15px;"><a href="#" class="nav-link">Ver Ventas</a></li>
-                    <li style="padding: 3px; font-size: 15px;"><a href="#" class="nav-link">Nueva Venta</a></li>
+                <ul class="collapse ps-2" id="submenu-ventas" data-bs-parent="#menu-principal">
+                    <li style="padding: 3px; font-size: 15px;">
+                        <a href="#" class="nav-link">Ver Ventas</a>
+                    </li>
+                    <li style="padding: 3px; font-size: 15px;">
+                        <a href="#" class="nav-link">Nueva Venta</a>
+                    </li>
                 </ul>
             </li>
 
+            <!-- Proveedores con submenú -->
             <li style="padding: 3px;">
                 <a href="#submenu-proveedores" data-bs-toggle="collapse" class="nav-link">
                     <i class="bi bi-file-earmark-person"></i> PROVEEDORES
                 </a>
-                <ul class="collapse ps-2" id="submenu-proveedores">
-                    <li style="padding: 3px; font-size: 15px;"><a href="#" class="nav-link">Ver Proveedores</a></li>
-                    <li style="padding: 3px; font-size: 15px;"><a href="#" class="nav-link">Nuevo Proveedor</a></li>
+                <ul class="collapse ps-2" id="submenu-proveedores" data-bs-parent="#menu-principal">
+                    <li style="padding: 3px; font-size: 15px;">
+                        <a href="#" class="nav-link">Ver Proveedores</a>
+                    </li>
+                    <li style="padding: 3px; font-size: 15px;">
+                        <a href="#" class="nav-link">Nuevo Proveedor</a>
+                    </li>
                 </ul>
             </li>
-
-
         </ul>
+
 
 
         <hr class="text-white">
         <h6 class="text-uppercase text-white-50 fw-bold small text-center mb-2">Mantenimiento</h6>
 
         <ul class="nav nav-pills flex-column sidebar-menu" id="menu">
-            <li style="padding: 3px;"><a href="#" class="nav-link" id="btn-configuracion"><i class="bi bi-gear me-2"></i> Configuración</a></li>
-            <li style="padding: 3px;"><a href="#" class="nav-link" id="btn-usuarios"><i class="bi bi-people me-2"></i> Usuarios</a></li>    
+            <li style="padding: 3px;"><a href="#" class="nav-link" id="btn-configuracion"><i
+                        class="bi bi-gear me-2"></i> Configuración</a></li>
+            <li style="padding: 3px;"><a href="#" class="nav-link" id="btn-usuarios"><i class="bi bi-people me-2"></i>
+                    Usuarios</a></li>
         </ul>
         <hr class="text-white">
 
@@ -134,10 +154,18 @@ header("Pragma: no-cache");
         <div class="encabezado-custom position-relative text-center" style=" border-radius: 6px;">
             <h2 class="mb-0">DF Inventario</h2>
             <a href="controladores/logout.php"
-                class="bi bi-box-arrow-right fs-2 position-absolute end-0 top-50 translate-middle-y me-3"></a>
+                class="bi bi-box-arrow-right fs-2 position-absolute end-0 top-50 translate-middle-y me-3" style="color: white;"></a>
         </div>
 
         <!-- Gráficos -->
+
+
+
+
+        <!-- ACA VAN LOS GRAFICOS DE INICIO -->
+        <!-- ACA VAN LOS GRAFICOS DE INICIO -->
+        <!-- ACA VAN LOS GRAFICOS DE INICIO -->
+
 
 
 
