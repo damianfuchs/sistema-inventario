@@ -1,6 +1,8 @@
 <!-- productos.php -->
 <div class="mt-4" id="productos-lista" style="max-width: 90%; margin: 0 auto;">
-    <h4 class="mb-3">Productos</h4>
+    <h4 class="mb-4 px-3 py-2 text-white rounded" style="background-color: #343a40; display: inline-block;">
+        Productos
+    </h4>
     <table class="table table-dark table-hover table-bordered">
         <thead>
             <tr>

@@ -64,7 +64,7 @@ header("Pragma: no-cache");
                     <li style="padding: 3px;" id="btn-productos">
                         <a href="#" class="nav-link">Ver Productos</a>
                     </li>
-                    <li style="padding: 3px; font-size: 15px;">
+                    <li style="padding: 3px; font-size: 15px;" id="btn-agregarproductos">
                         <a href="#" class="nav-link">Agregar Producto</a>
                     </li>
                 </ul>
