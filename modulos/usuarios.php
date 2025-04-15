@@ -13,10 +13,6 @@ $result = $conn->query($sql);
 <div class="mt-4" id="usuario-lista" style="max-width: 90%; margin: 0 auto;">
     <!-- Formulario de registro -->
 
-
-
-
-
     <h4 class="mb-3">Usuarios</h4>
     <table class="table table-dark table-hover table-bordered">
         <thead>

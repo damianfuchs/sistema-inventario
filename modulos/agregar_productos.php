@@ -48,25 +48,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     <div class="container">
-        <div class="form-container">
+        <div class="form-container" style="margin-top: 15px;">
             <form id="" action="modulos/agregar_productos.php#agregar_productos-lista" method="POST" enctype="multipart/form-data">
 
                 <div class="row mb-3">
                     <div class="col-md-3">
                         <label for="codigo" class="form-label">Código</label>
-                        <input type="text" class="form-control" id="codigo" name="codigo" required>
+                        <input style="background-color: #1e1e1e; color: white;" type="text" class="form-control" id="codigo" name="codigo" required>
                     </div>
                     <div class="col-md-3">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        <input style="background-color: #1e1e1e; color: white;" type="text" class="form-control" id="nombre" name="nombre" required>
                     </div>
                     <div class="col-md-3">
                         <label for="precio" class="form-label">Precio</label>
-                        <input type="number" step="0.01" class="form-control" id="precio" name="precio" required>
+                        <input style="background-color: #1e1e1e; color: white;" type="number" step="0.01" class="form-control" id="precio" name="precio" required>
                     </div>
                     <div class="col-md-3">
                         <label for="stock" class="form-label">Stock</label>
-                        <input type="number" step="0.01" class="form-control" id="stock" name="stock" required>
+                        <input style="background-color: #1e1e1e; color: white;" type="number" step="0.01" class="form-control" id="stock" name="stock" required>
                     </div>
                 </div>
 
@@ -74,17 +74,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="row mb-3">
                     <div class="col-md-8">
                         <label for="descripcion" class="form-label">Descripción</label>
-                        <textarea class="form-control" id="descripcion" name="descripcion" rows="1" required></textarea>
+                        <textarea style="background-color: #1e1e1e; color: white;" class="form-control" id="descripcion" name="descripcion" rows="1" required></textarea>
                     </div>
                     <div class="col-md-4">
                         <label for="imagen" class="form-label">Imagen</label>
-                        <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
+                        <input style="background-color: #1e1e1e; color: white;" type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
                     </div>
                 </div>
 
                 <div class="col-md-3">
                     <label for="categoria" class="form-label">Categoría</label>
-                    <select class="form-select" id="categoria" name="categoria" required>
+                    <select style="background-color: #1e1e1e; color: white;" class="form-select" id="categoria" name="categoria" required>
                         <option value="">Seleccione una categoría</option>
                         <?php
                                 $consulta = "SELECT categoria_id, categoria_nombre FROM categorias";
@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 
-    <table class="table table-dark table-hover table-bordered mt-3">
+    <table class="table table-dark table-hover table-bordered mt-3  ">
         <thead>
             <tr>
                 <th>Codigo</th>
