@@ -15,6 +15,7 @@ $result = $conn->query($consulta);
 <link rel="stylesheet" href="./css/productos.css">
 
 <div class="mt-4" id="producto-lista" style="max-width: 90%; margin: 0 auto;">
+
     <!-- Formulario de registro -->
 
     <h4 class="mt-2 px-3 py-2 text-white rounded"
@@ -82,7 +83,7 @@ $result = $conn->query($consulta);
                             <td>" . $row["prod_precio"] . "</td>
                             <td>
                                 <button class='btn btn-warning btn-sm' onclick='editarProducto(" . $row["prod_id"] . ")'>Editar</button>
-                                <button class='btn btn-danger btn-sm' onclick='eliminarProducto(" . $row["prod_id"] . ")'>Eliminar</button>
+                                <a href='eliminar_producto.php?prod_id=" . $row["prod_id"] . "' class='btn btn-danger btn-sm' onclick='return confirm(\"¿Estás seguro de eliminar este producto?\")'>Eliminar</a>
                             </td>
                         </tr>";
                 }

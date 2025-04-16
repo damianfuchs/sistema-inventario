@@ -148,7 +148,7 @@ header("Pragma: no-cache");
     </div>
 
     <!-- Main Content -->
-    <div class="main p-4" style="background-color: rgb(186 190 193);">
+    <div class="main p-4" style="background-color: rgb(186 190 193);" id>
 
 
         <div class="encabezado-custom position-relative text-center" style=" border-radius: 6px;">
